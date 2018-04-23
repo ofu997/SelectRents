@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+// I added this
+using Microsoft.EntityFrameworkCore;
+using CMSRentalCart.Models;
+
+
 
 namespace CMSRentalCart
 {
@@ -22,6 +27,9 @@ namespace CMSRentalCart
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var connection = @"Server=(localdb)\mssqllocaldb;Database=CMSRentalCart;Trusted_Connection=True;ConnectRetryCount=0";
+            // services.AddDbContext<RentalsDb>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,14 +55,14 @@ namespace CMSRentalCart
             });
 
             app.UseMvc(routes =>
-                {
-                    routes.MapRoute("areaRoute", "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
+            {
+                routes.MapRoute("areaRoute", "{area:exists}/{controller=Admin}/{action=Index}/{id?}");
 
-                    routes.MapRoute(
-                      name: "areas",
-                      template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                    );
-                }
+                routes.MapRoute(
+                  name: "areas",
+                  template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
+            }
             );
 
         }

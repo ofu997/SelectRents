@@ -13,14 +13,18 @@ namespace CMSRentalCart.Models
     {
         [Key]
         public Guid Id { get; set; }
-        public DateTime timeStamp { get; set; }
-        public string description { get; set; }
-        public string imagePath { get; set; }
+        public DateTime TimeStamp { get; set; }
+        public string Description { get; set; }
+        public string ImagePath { get; set; }
         
     }
+
     public class RentalsDb : DbContext
     {
         public DbSet<Rentals> Rentals { get; set; }
-    }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
+            optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb; Database = CMSRentalCart; Trusted_Connection = True; ConnectRetryCount = 0");
+        }
+    }
 }
