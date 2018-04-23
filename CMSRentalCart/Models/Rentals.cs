@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 // I added this one
 using Microsoft.EntityFrameworkCore;
+using CMSRentalCart.Models.ViewModels.Pages;
 
 namespace CMSRentalCart.Models
 {
@@ -23,8 +24,12 @@ namespace CMSRentalCart.Models
     {
         public DbSet<Rentals> Rentals { get; set; }
 
+        // Aaron C's solution
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb; Database = CMSRentalCart; Trusted_Connection = True; ConnectRetryCount = 0");
         }
+
+        // Aaron C's solution
+        public DbSet<CMSRentalCart.Models.ViewModels.Pages.PageVM> PageVM { get; set; }
     }
 }

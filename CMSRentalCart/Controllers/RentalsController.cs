@@ -18,11 +18,10 @@ namespace CMSRentalCart.Controllers
         public RentalsController(RentalsDb context)
         {
             _context = context;
-
-
         }
         */
 
+        // Aaron C's solution to Rental controller not working
         public RentalsController()
         {
             _context = new RentalsDb();
