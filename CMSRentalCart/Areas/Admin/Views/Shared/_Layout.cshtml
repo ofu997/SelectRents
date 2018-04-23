@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Select Rents</title>
+    <title>@ViewData["Title"] - Select Rents </title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -43,20 +43,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand Branding">Select Rents</a>
+                <a href="/admin/dashboard" class="navbar-brand Branding">Dashboard</a>
+                @*
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand Branding">Select Rents Administrators</a>
+                *@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index" class="navbarHeaders">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About" class="navbarHeaders">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact" class="navbarHeaders">Contact</a></li>
+
                     @* make lis, then create controller commands in "Home" and page views*@
+                    @*
                     <li><a asp-area="" asp-controller="Home" asp-action="EventCanopies">Event Canopies</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="ThrillMountain">Thrill Mountain</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Reservations">Reserve a date</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Photos">Photos</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Rates">Rates</a></li>
-                    
+
+                    *@
+
+
+                </ul>
+                <ul class="navbar-right">
+                    <li><a href="/" target="_blank" class="navbar-brand Branding">Select Rents: Home</a></li>
                 </ul>
             </div>
         </div>
@@ -68,7 +79,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2018 - CMSRentalCart (from main layout)</p>
+            <p>&copy; 2018 - CMSRentalCart (from Admin layout)</p>
         </footer>
     </div>
 

@@ -29,6 +29,44 @@ namespace CMSRentalCart.Controllers
             return View();
         }
 
+        public IActionResult EventCanopies()
+        {
+            ViewData["Message"] = "Your Event Canopies page.";
+
+            return View();
+        }
+
+        public IActionResult ThrillMountain()
+        {
+            ViewData["Message"] = "Your thrill mountain page.";
+
+            return View();
+        }
+        public IActionResult Reservations()
+        {
+            ViewData["Message"] = "Your Reservations page.";
+
+            return View();
+        }
+        public IActionResult Photos()
+        {
+            ViewData["Message"] = "Your Photos page.";
+
+            return View();
+        }
+        public IActionResult Rates()
+        {
+            ViewData["Message"] = "Your Rates page.";
+
+            return View();
+        }
+        public IActionResult ContactPage()
+        {
+            ViewData["Message"] = "Your Contact page.";
+
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
