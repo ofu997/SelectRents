@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
 using System;
 using System.Collections.Generic;
 // These I added
@@ -27,3 +27,4 @@ namespace CMSRentalCart.Models.Data
 
     }
 }
+*/

@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,3 +39,4 @@ namespace CMSRentalCart.Models.ViewModels.Pages
         public bool HasSidebar { get; set; }
     }
 }
+*/

@@ -1,17 +1,19 @@
-﻿@model IEnumerable<CMSRentalCart.Models.ViewModels.Pages.PageVM>
+﻿@*
 
-@{
-    ViewData["Title"] = "Index";
-}
+        @model IEnumerable<CMSRentalCart.Models.ViewModels.Pages.PageVM>
 
-<h2>Index</h2>
+    @{
+        ViewData["Title"] = "Index";
+    }
 
-<p>
-    @*
-        <a asp-action="Create">Create New</a>
-    *@
+    <h2>Index</h2>
 
-    <a asp-action="Add new page">Add page</a>
+    <p>
+        @*
+            <a asp-action="Create">Create New</a>
+
+
+<a asp-action="Add new page">Add page</a>
 </p>
 
 @if (!Model.Any())
@@ -26,43 +28,47 @@ else
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Slug
-                </th>
-                <th>
-                   Sidebar
-                </th>
-                
+            <th>
+                Title
+            </th>
+            <th>
+                Slug
+            </th>
+            <th>
+                Sidebar
+            </th>
+
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Slug)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sorting)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HasSidebar)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit page </a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Page details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete page</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Slug)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Body)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sorting)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasSidebar)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit page </a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Page details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete page</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+*@
+
