@@ -5,6 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CMSRentalCart.Models;
+// added these
+using MimeKit;
+using MailKit.Net.Smtp;
+//using System.Net.Mail.SmtpClient();
+using System.Net.Mail;
 
 namespace CMSRentalCart.Controllers
 {
@@ -12,6 +17,7 @@ namespace CMSRentalCart.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
 
@@ -71,5 +77,27 @@ namespace CMSRentalCart.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        /*
+        public void SendMail(string mailbody)
+        {
+            // using mimekit
+            var message = new MimeMessage();
+            // var customerEmail = inputCustomerEmail.Text;
+            message.From.Add(new MailboxAddress("Test Project", "trees73@gmail.com"));
+            message.To.Add(new MailboxAddress("oliver", "OFU997@gmail.com"));
+            message.Subject = "testing";
+            // can also use new bodybuilder
+            message.Body = new TextPart("plain"){Text = "Hello Mars!"};
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
+            {
+                client.Connect("smtp.gmail.com",587,false);
+                client.Authenticate("trees73@gmail.com","thepassword.");
+                client.Send(message);
+                client.Disconnect(true);
+            }
+        }
+        */
+
     }
 }

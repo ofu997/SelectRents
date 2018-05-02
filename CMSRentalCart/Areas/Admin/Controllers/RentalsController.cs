@@ -158,5 +158,17 @@ namespace CMSRentalCart.Areas.Admin.Controllers
         {
             return _context.Rentals.Any(e => e.Id == id);
         }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            // create and send the mail here
+
+            return RedirectToPage("Index");
+        }
     }
 }
