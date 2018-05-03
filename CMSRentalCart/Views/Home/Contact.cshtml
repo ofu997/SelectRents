@@ -25,62 +25,65 @@
 </div>
 
 
-        <form asp-action="SendMail" asp-controller="Home" class="form form-horizontal" method="post">
-        <div asp-validation-summary="All"></div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="Name" class="col-md-3 right">Name:</label>
-                    <div class="col-md-9">
-                        <input asp-for="Name" placeholder="your first name" />
-                        @*
-                                <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name"></span>
-                        *@
-                    </div>
+<form asp-action="SendMail" asp-controller="Home" class="form form-horizontal" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Name" class="col-md-3 right">Name:</label>
+                <div class="col-md-9">
+                    <input asp-for="Name" placeholder="your first name" />
+                    @*
+                            <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name"></span>
+                    *@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="LastName" class="col-md-3 right">Last name:</label>
-                    <div class="col-md-9">
-                        <input asp-for="LastName" placeholder="your last name" />
-                        <span asp-validation-for="LastName"></span>
-                    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="LastName" class="col-md-3 right">Last name:</label>
+                <div class="col-md-9">
+                    <input asp-for="LastName" placeholder="your last name" />
+                    <span asp-validation-for="LastName"></span>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="Email" class="col-md-3 right">Email:</label>
-                    <div class="col-md-9">
-                        <input asp-for="Email" class="form-control" />
-                        <span asp-validation-for="Email"></span>
-                    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Email" class="col-md-3 right">Email:</label>
+                <div class="col-md-9">
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email"></span>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label asp-for="Message" class="col-md-3 right">Your Message:</label>
-                    <div class="col-md-9">
-                        <textarea asp-for="Message" rows="6" class="form-control"></textarea>
-                        <span asp-validation-for="Message"></span>
-                    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label asp-for="Message" class="col-md-3 right">Your Message:</label>
+                <div class="col-md-9">
+                    <textarea asp-for="Message" rows="6" class="form-control"></textarea>
+                    <span asp-validation-for="Message"></span>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <input type="submit" value="Send"/>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <input type="submit" value="Send" />
         </div>
-    </form>
+    </div>
+</form>
 
-<a href="/Home/SendMail?mailbody=5&name=alexa">Send an email...</a>
+@*
+    previous method requests url and calls function with arguments after the "?"
+    <a href="/Home/SendMail?mailbody=5&name=alexa">Send an email...</a>
+*@
 
 

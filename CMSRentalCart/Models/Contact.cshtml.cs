@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,23 +27,5 @@ namespace CMSRentalCart.Models
         public string Message { get; set; }
         [BindProperty]
         public ContactFormModel Contact { get; set; }
-
-
-        /*
-        var mailbody = $@"Hallo website owner,
-
-            This is a new contact request from your website:
-
-            Name: {Name}
-            LastName: {LastName}
-            Email: {Email}
-            Message: ""{Message}""
-
-
-            Cheers,
-            The websites contact form";
-
-        //SendMail(mailbody);
-        */
     }
 }
