@@ -163,7 +163,7 @@ namespace CMSRentalCart.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return Page();
+                return View();
             }
 
             // create and send the mail here

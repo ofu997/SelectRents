@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ContactFormModel;
+
+@{
     ViewData["Title"] = "Contact";
 }
 <h2>@ViewData["Title"]</h2>
@@ -22,16 +24,19 @@
     </div>
 </div>
 
-@*
-        <form class="form form-horizontal" method="post">
+
+        <form asp-action="SendMail" asp-controller="Home" class="form form-horizontal" method="post">
         <div asp-validation-summary="All"></div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="Contact.Name" class="col-md-3 right">Name:</label>
+                    <label asp-for="Name" class="col-md-3 right">Name:</label>
                     <div class="col-md-9">
-                        <input asp-for="Contact.Name" class="form-control" />
-                        <span asp-validation-for="Contact.Name"></span>
+                        <input asp-for="Name" placeholder="your first name" />
+                        @*
+                                <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name"></span>
+                        *@
                     </div>
                 </div>
             </div>
@@ -39,10 +44,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="Contact.LastName" class="col-md-3 right">Last name:</label>
+                    <label asp-for="LastName" class="col-md-3 right">Last name:</label>
                     <div class="col-md-9">
-                        <input asp-for="Contact.LastName" class="form-control" />
-                        <span asp-validation-for="Contact.LastName"></span>
+                        <input asp-for="LastName" placeholder="your last name" />
+                        <span asp-validation-for="LastName"></span>
                     </div>
                 </div>
             </div>
@@ -50,10 +55,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="Contact.Email" class="col-md-3 right">Email:</label>
+                    <label asp-for="Email" class="col-md-3 right">Email:</label>
                     <div class="col-md-9">
-                        <input asp-for="Contact.Email" class="form-control" />
-                        <span asp-validation-for="Contact.Email"></span>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email"></span>
                     </div>
                 </div>
             </div>
@@ -61,19 +66,21 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label asp-for="Contact.Message" class="col-md-3 right">Your Message:</label>
+                    <label asp-for="Message" class="col-md-3 right">Your Message:</label>
                     <div class="col-md-9">
-                        <textarea asp-for="Contact.Message" rows="6" class="form-control"></textarea>
-                        <span asp-validation-for="Contact.Message"></span>
+                        <textarea asp-for="Message" rows="6" class="form-control"></textarea>
+                        <span asp-validation-for="Message"></span>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <button type="submit">Send</button>
+                <input type="submit" value="Send"/>
             </div>
         </div>
     </form>
 
-*@
+<a href="/Home/SendMail?mailbody=5&name=alexa">Send an email...</a>
+
+
